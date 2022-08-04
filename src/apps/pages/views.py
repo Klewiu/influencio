@@ -8,6 +8,10 @@ from .filters import MovieFilter
 from django.contrib import messages
 from django.core.mail import send_mail
 
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
+from django.views.decorators.vary import vary_on_cookie
+
 
 # Create your views here.
 
@@ -20,7 +24,8 @@ from django.core.mail import send_mail
 
 # Home View - all movies without category filter and django-filter
 
-
+@method_decorator(cache_page(60 * 60 * 2), name='dispatch')
+@method_decorator(vary_on_cookie, name='dispatch')
 class MoviesView (FilterView):
     model = Movie
     template_name = 'pages/home.html'
@@ -44,7 +49,8 @@ class MoviesView (FilterView):
         return context
 
 # Hot-Top View - parent is MoviesView
-
+@method_decorator(cache_page(60 * 60 * 2), name='dispatch')
+@method_decorator(vary_on_cookie, name='dispatch')
 class TravelView (MoviesView):
     category = 'TRAVEL'
 
@@ -62,6 +68,8 @@ class TravelView (MoviesView):
         return context
 
 # Mix View - prarent is HotTopView
+@method_decorator(cache_page(60 * 60 * 2), name='dispatch')
+@method_decorator(vary_on_cookie, name='dispatch')
 class MixView (MoviesView):
     template_name = 'pages/mix.html'
 
@@ -71,34 +79,50 @@ class MixView (MoviesView):
         return movie_filtered_list.qs.order_by('?') # Question mark gives us random results #
 
 # Odkrycia View - prarent is HotTopView
+@method_decorator(cache_page(60 * 60 * 2), name='dispatch')
+@method_decorator(vary_on_cookie, name='dispatch')
 class OdkryciaView (TravelView):
     category = 'ODKRYCIA'
 
 # Beauty View - prarent is HotTopView
+@method_decorator(cache_page(60 * 60 * 2), name='dispatch')
+@method_decorator(vary_on_cookie, name='dispatch')
 class BeautyView (TravelView):
     category = 'BEAUTY'
 
 # Funny View - prarent is HotTopView
+@method_decorator(cache_page(60 * 60 * 2), name='dispatch')
+@method_decorator(vary_on_cookie, name='dispatch')
 class FunnyView (TravelView):
     category = 'ŚMIESZNE'
 
 # Gamming View - prarent is HotTopView
+@method_decorator(cache_page(60 * 60 * 2), name='dispatch')
+@method_decorator(vary_on_cookie, name='dispatch')
 class GamingView (TravelView):
     category = 'GAMING'
 
 # Lifestyle View - prarent is HotTopView
+@method_decorator(cache_page(60 * 60 * 2), name='dispatch')
+@method_decorator(vary_on_cookie, name='dispatch')
 class LifestyleView (TravelView):
     category = 'LIFESTYLE'
 
 # Sport View - prarent is HotTopView
+@method_decorator(cache_page(60 * 60 * 2), name='dispatch')
+@method_decorator(vary_on_cookie, name='dispatch')
 class SportView (TravelView):
     category = 'SPORT'
 
 # Sport View - prarent is HotTopView
+@method_decorator(cache_page(60 * 60 * 2), name='dispatch')
+@method_decorator(vary_on_cookie, name='dispatch')
 class SztukaView (TravelView):
     category = 'SZTUKA'
 
 #Creators List View - Lista Twórców
+@method_decorator(cache_page(60 * 60 * 2), name='dispatch')
+@method_decorator(vary_on_cookie, name='dispatch')
 class CreatorsView (ListView):
     model = Movie
     template_name = 'pages/creators.html'
@@ -113,6 +137,8 @@ class CreatorsView (ListView):
 
 
 #Articles View
+@method_decorator(cache_page(60 * 60 * 2), name='dispatch')
+@method_decorator(vary_on_cookie, name='dispatch')
 class ArticlesListView(ListView):
     model = Post
     template_name = 'pages/articles.html'

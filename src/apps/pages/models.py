@@ -39,7 +39,6 @@ class Movie (models.Model):
     fire_likes_count = models.IntegerField(default=0, null=True, blank=True)
 
 
-
     class Meta:
         verbose_name = ("Movie")
         verbose_name_plural = ("Movies")
