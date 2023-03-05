@@ -15,6 +15,8 @@ Influencio allows the website administrator to add more videos or photos using e
 
 
 ## Application views:
+<img src="https://github.com/Klewiu/influencio/blob/master/Influencio_example_3.PNG" alt="www" width="auto" height="100" margin="5px" align="center" /> 
+
 
 
 If you are interesten in this project please contact kuba.klewicki@gmail.com or tomekklewicki@gmail.com
