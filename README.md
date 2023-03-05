@@ -15,7 +15,7 @@ Influencio allows the website administrator to add more videos or photos using e
 
 
 ## Application views:
-<img src="https://github.com/Klewiu/influencio/blob/master/Influencio_example_2.PNG" alt="example1" width="auto" height="330" margin="5px" />&nbsp;&nbsp;&nbsp;<img src="https://github.com/Klewiu/influencio/blob/master/Influencio_example_3.PNG" alt="example1" width="auto" height="330" margin="5px" />&nbsp;&nbsp;&nbsp;<img src="https://github.com/Klewiu/influencio/blob/master/Influencio_example_1.PNG" alt="www" width="auto" height="330" margin="5px" /> 
+![example1](/Influencio_example_2.PNG)&nbsp;&nbsp;&nbsp;<img src="https://github.com/Klewiu/influencio/blob/master/Influencio_example_3.PNG" alt="example1" width="auto" height="330" margin="5px" />&nbsp;&nbsp;&nbsp;<img src="https://github.com/Klewiu/influencio/blob/master/Influencio_example_1.PNG" alt="www" width="auto" height="330" margin="5px" /> 
 
 
 
