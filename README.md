@@ -15,7 +15,9 @@ Influencio allows the website administrator to add more videos or photos using e
 
 
 ## Application views:
-![example1](/Influencio_example_2.PNG)&nbsp;&nbsp;&nbsp; ![example2](/Influencio_example_3.PNG) &nbsp;&nbsp;&nbsp;![example3](/Influencio_example_1.PNG)
+![example1](/Influencio_example_2.PNG)</br>
+![example2](/Influencio_example_3.PNG)
+![example3](/Influencio_example_1.PNG)
 
 
 
