@@ -172,19 +172,28 @@ def about(request):
 #contact view with contact form
 
 def contact(request):
-
+    
+    spam_list = ['Robot','pieniądze','robot',"BTC","help","Capital","crypto","Crypto","Financial","salary","millionaire","sex"]
+    
     if request.method == 'POST':
         message_name = request.POST['message-name']
         message_email = request.POST['message-email']
         message = request.POST['message']
 
         if message_name and message_email and message:
-            send_mail(
-                f'Formularz Kontaktowy, wiadomość od {message_name}',
-                f'Wiadomość z formularza kontaktowego INFLUENCIO.PL\n Użytkownik: {message_name}\n Email: {message_email}\n Wiadomość: {message}',
-                message_email,
-                ['kontakt.influencio@gmail.com'],)
-            messages.success(request, f'Dziękujemy za kontakt {message_name}, Twój email został wysłany ! ')
+            if ('Crytofet') in message_name:
+                messages.warning(request, 'Nie przyjmujemy spamu!')
+            elif ('@pinkinbox.org') in message_email:
+                messages.warning(request, 'Nie przyjmujemy spamu!')
+            elif any(spam in message for spam in spam_list):
+                messages.warning(request, 'Nie przyjmujemy spamu!')
+            else:
+                send_mail(
+                    f'Formularz Kontaktowy, wiadomość od {message_name}',
+                    f'Wiadomość z formularza kontaktowego INFLUENCIO.PL\n Użytkownik: {message_name}\n Email: {message_email}\n Wiadomość: {message}',
+                    message_email,
+                    ['kontakt.influencio@gmail.com'],)
+                messages.success(request, f'Dziękujemy za kontakt {message_name}, Twój email został wysłany ! ')
         else:
             messages.warning(request, 'Wypełnij wszystkie pola formularza przed wysłaniem !')
 

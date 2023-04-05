@@ -1,5 +1,6 @@
 from django.contrib import sitemaps
 from django.urls import reverse
+from apps.pages.models import Movie
 
 
 class StaticViewsSitemap(sitemaps.Sitemap):
@@ -10,22 +11,28 @@ class StaticViewsSitemap(sitemaps.Sitemap):
 
     def items(self):
 
-        return [
-            'page-home', 
-            'page-travel', 
-            'page-sztuka', 
-            'page-beauty', 
-            'page-funny', 
-            'page-lifestyle', 
-            'page-gaming', 
-            'page-sport', 
-            'page-contact', 
-            'page-privacy',
-            'page-about',
-            'page-about',
-            'page-creators',
-            'page-articles',
+        urls =  [
+            '/', 
+            '/travel', 
+            '/sztuka', 
+            '/beauty', 
+            '/funny', 
+            '/lifestyle', 
+            '/gaming', 
+            '/sport', 
+            '/contact', 
+            '/privacy',
+            '/about',
+            '/about',
+            '/creators',
+            '/articles',
             ]
+        
+        movies = Movie.objects.all()
+        for movie in movies:
+            urls.append(f'/?author={movie.author}')
+
+        return urls
 
     def location(self, item):
-        return reverse(item)
+        return item
