@@ -23,4 +23,4 @@ Influencio allows the website administrator to add more videos or photos using e
 
 If you are interesten in this project please contact kuba.klewicki@gmail.com or tomekklewicki@gmail.com
 ##
-<img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Globe_icon_2.svg" alt="www" width="auto" height="15" margin="5px" align="center" /> https://influencio.pl
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Globe_icon_2.svg" alt="www" width="auto" height="15" margin="5px" align="center" />
